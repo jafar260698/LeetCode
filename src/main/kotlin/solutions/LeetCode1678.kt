@@ -8,24 +8,14 @@ fun main() {
 
 
 fun interpret(command: String): String {
-    var result = ""
-    var sample = ""
-
-    command.forEach{
-        sample+=""+it
-        if(sample=="G"){
-            result+="G"
-            sample=""
-        }
-        if(sample =="()"){
-            result+="o"
-            sample=""
-        }
-        if(sample == "(al)"){
-            result+="al"
-            sample=""
-        }
+    val tempResult = StringBuilder()
+    command.toCharArray().forEachIndexed { index, c ->
+        if(c == 'G')
+            tempResult.append(c)
+        if(c == '(' && command[index+1] == 'a')
+            tempResult.append("al")
+        if(c == '(' && command[index+1] == ')')
+            tempResult.append("o")
     }
-
-    return result
+    return tempResult.toString()
 }
