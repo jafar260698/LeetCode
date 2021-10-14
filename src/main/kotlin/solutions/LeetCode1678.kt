@@ -10,10 +10,9 @@ fun main() {
 fun interpret(command: String): String {
     var result = ""
     var sample = ""
-    val array = Array(command.length) {command[it].toString()}
 
-    array.forEach{
-        sample+=it
+    command.forEach{
+        sample+=""+it
         if(sample=="G"){
             result+="G"
             sample=""
