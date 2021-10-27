@@ -1,21 +1,21 @@
 package solutions
 
 fun main() {
-    val n = 1412
+    val n = 459
     print(thousandSeparator(n))
 }
 
-
 fun thousandSeparator(n: Int): String {
-    val result = n.toString().reversed()
-    var res = ""
+    val s = n.toString()
+    var result=""
 
-    for ( i in result){
-        res += if (res.isNotEmpty() && res.length % 3 == 0){
-            ".$i"
-        } else {
-            "$i"
+    for((counter, i) in (s.length-1 downTo 0).withIndex()){
+        if(counter % 3 == 0 && s.length-1>i){
+            result= ".$result"
         }
+        result=s[i]+result
     }
-    return res.reversed()
+
+    return result
 }
+
