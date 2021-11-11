@@ -1,9 +1,41 @@
 package solutions
 
 fun main() {
-    val jj = arrayOf(2,1,3,4,5)
+    val jj = "Assalomu alaykum"
 
-    print(smallestEqual(jj))
+    print(reverseWords1(jj))
+    print(reverseWords2(jj))
 }
 
 
+fun reverseWords1(s: String): String {
+    var result = ""
+    val arr = s.split(" ")
+
+    for(i in arr.size-1 downTo 0){
+        result = "${arr[i].reversed()} "+result
+    }
+
+    return result.trim()
+}
+
+fun reverseWords2(s: String): String {
+    val list = mutableListOf<String>()
+    var ss = ""
+    var result = ""
+
+    for(i in s){
+        ss = if(i != ' '){
+            "$i"+ss
+        } else {
+            list.add("$ss ")
+            ""
+        }
+    }
+    list.add(ss)
+
+    list.forEach{
+        result+=it
+    }
+    return result
+}
