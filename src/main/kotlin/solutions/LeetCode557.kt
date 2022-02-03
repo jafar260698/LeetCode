@@ -3,8 +3,14 @@ package solutions
 fun main() {
     val jj = "Assalomu alaykum"
 
-    print(reverseWords1(jj))
-    print(reverseWords2(jj))
+    for(i in 0..1000){
+      if(i % 3 == 0 && i % 5 ==0 && i % 7 ==0){
+          print("\n $i \n")
+      }
+    }
+
+    //print(reverseWords1(jj))
+    // print(reverseWords2(jj))
 }
 
 
@@ -37,5 +43,16 @@ fun reverseWords2(s: String): String {
     list.forEach{
         result+=it
     }
+    return result
+}
+
+fun busyStudent(startTime: IntArray, endTime: IntArray, queryTime: Int): Int {
+    var result = 0
+    for(i in startTime.indices){
+        if(queryTime > startTime[i] && queryTime < endTime[i]){
+            result++
+        }
+    }
+
     return result
 }
