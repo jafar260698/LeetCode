@@ -53,6 +53,6 @@ fun busyStudent(startTime: IntArray, endTime: IntArray, queryTime: Int): Int {
             result++
         }
     }
-
+        
     return result
 }
