@@ -6,23 +6,23 @@ fun main() {
     bubbleSorting(nums1).forEach { a -> print("$a \n")}
 }
 
-// by me
+// selection sort
 fun bubbleSorting(nums1: IntArray): IntArray {
     val list = nums1
 
     for(j in list.indices){
         for(i in list.indices-j) {
-            if(list[j] > list[i]){
+            if(list[j] < list[i]){
                 val temp = list[i]
                 list[i] = list[j]
                 list[j] = temp
             }
         }
     }
-    return  list.reversedArray()
+    return  list
 }
 
-//by video
+// bubble sort
 fun realBubbleSorting(nums1: IntArray): IntArray {
     val list = nums1
 
